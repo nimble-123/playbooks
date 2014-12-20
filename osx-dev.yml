@@ -1,0 +1,6 @@
+---
+- name: OSX Dev Ansible Playbook
+  hosts: all
+  roles:
+    - osx-common
+    - osx-gui

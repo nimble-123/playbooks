@@ -1,0 +1,66 @@
+---
+# OS X Python Development Environment Setup
+
+# Latest Python 2.7.x release, because the OS X default Python is not suitable for development.
+# brew install python
+# python --version ~ 2.7.6
+- name: Install latest Python 2.7.x release
+  homebrew: name=python state=present
+# Notes:
+# Includes pip (pip --version ~ 1.4.1, installed to /usr/local/lib/python2.7/site-packages)
+# Includes distribute (pip freeze shows ~ 0.7.3)
+# Use pip (no sudo) to install packages globally to /usr/local/lib/python2.7/site-packages 
+# Reference:
+# * Python releases http://www.python.org/download/releases/
+# * Homebrew Python Notes https://github.com/mxcl/homebrew/wiki/Homebrew-and-Python
+
+
+# Virtualenv - per-project Python package installation environments.
+# pip install virtualenv --upgrade
+# virtualenv --version ~ 1.11.2
+- name: Install virtualenv (latest)
+  pip: name=virtualenv
+# Notes:
+# Installs to /usr/local/lib/python2.7/site-packages
+# Creates a copy of a specific version of Python (by default the version
+# virtualenv was installed with, 2.7.x)
+# Usage:
+# virtualenv --distribute [--python=python3] venv 
+# source venv/bin/activate
+# deactivate
+
+
+# Virtualenv-wrapper - per-project Python package installation environments isolated and stored in ~/.virtualenvs. Also provides env var scripts.
+# pip install virtualenvwrapper --upgrade
+# pip freeze shows ~ 4.2
+- name: Install virtualenvwrapper (latest)
+  pip: name=virtualenvwrapper
+- name: Source virtualenvwrapper.sh in .bash_profile
+  lineinfile: dest=~/.bash_profile line="source /usr/local/bin/virtualenvwrapper.sh" state=present
+  tags:
+    - build-dotfiles
+# Notes:
+# Installs to /usr/local/lib/python2.7/site-packages
+# Usage:
+# mkvirtualenv --distribute [--python=python3] project-name (autoactivates it)
+# workon project-name
+# deactivate
+# rmvirtualenv project-name
+# lsvirtualenv, cdvirtualenv, cdsitepackages, lssitepackages
+# Modify postactivate, postdeactivate in ~/.virtualenvs/project-name/bin to set environment variable or customize the environment.
+
+
+# Latest Python 3.x.x release
+# brew install python3
+# python --version ~ 3.3.4
+- name: Install latest Python 3.x.x release
+  homebrew: name=python3 state=present
+# Notes:
+# Includes pip3 (pip3 --version ~ 1.4.1, installed to /usr/local/lib/python3.3/site-packages)
+# Use pip3 (no sudo) to install packages globally to /usr/local/lib/python3.3/site-packages 
+# Reference:
+# * Python releases http://www.python.org/download/releases/
+# * Homebrew Python Notes https://github.com/mxcl/homebrew/wiki/Homebrew-and-Python
+
+
+

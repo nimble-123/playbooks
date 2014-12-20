@@ -1,0 +1,82 @@
+---
+# OSX Finder Configuration Role
+
+- name: Finder allow quitting via ⌘ + Q, doing so will also hide desktop icons
+  raw: defaults write com.apple.finder QuitMenuItem -bool true
+
+- name: Finder disable window animations and Get Info animations
+  raw: defaults write com.apple.finder DisableAllAnimations -bool true
+
+# For other paths, use `PfLo` and `file:///full/path/here/`
+- name: New Finder windows show the user home directory
+  raw: defaults write com.apple.finder NewWindowTarget -string "PfLo"
+  raw: defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/dghubble/"
+
+- name: Show icons for hard drives, servers, and removable media on the desktop
+  raw: defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
+  raw: defaults write com.apple.finder ShowHardDrivesOnDesktop -bool true
+  raw: defaults write com.apple.finder ShowMountedServersOnDesktop -bool true
+  raw: defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
+
+- name: Finder show hidden files by default
+  raw: defaults write com.apple.finder AppleShowAllFiles -bool true
+
+- name: Finder show all filename extensions
+  raw: defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+
+- name: Finder don't show the bottom status bar
+  raw: defaults write com.apple.finder ShowStatusBar -bool false
+
+- name: Finder show path bar
+  raw: defaults write com.apple.finder ShowPathbar -bool true
+
+- name: Finder allow text selection in Quick Look
+  raw: defaults write com.apple.finder QLEnableTextSelection -bool true
+
+- name: Display full POSIX path as Finder window title
+  raw: defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
+
+- name: When performing a search, search the current folder by default
+  raw: defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
+
+- name: Disable the warning when changing a file extension
+  raw: defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+
+- name: Enable spring loading for directories
+  raw: defaults write NSGlobalDomain com.apple.springing.enabled -bool true
+
+- name: Remove the spring loading delay for directories
+  raw: defaults write NSGlobalDomain com.apple.springing.delay -float 0
+
+- name: Avoid creating .DS_Store files on network volumes
+  raw: defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+
+- name: Disable disk image verification
+  raw: defaults write com.apple.frameworks.diskimages skip-verify -bool true
+  raw: defaults write com.apple.frameworks.diskimages skip-verify-locked -bool true
+  raw: defaults write com.apple.frameworks.diskimages skip-verify-remote -bool true
+
+- name: Automatically open a new Finder window when a volume is mounted
+  raw: defaults write com.apple.frameworks.diskimages auto-open-ro-root -bool true
+  raw: defaults write com.apple.frameworks.diskimages auto-open-rw-root -bool true
+  raw: defaults write com.apple.finder OpenWindowForNewRemovableDisk -bool true
+
+# Four-letter codes for the other view modes: `icnv`, `clmv`, `Flwv`
+- name: Use column view in all Finder windows by default
+  raw: defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
+
+- name: Keep the warning before emptying the Trash
+  raw: defaults write com.apple.finder WarnOnEmptyTrash -bool true
+
+- name: Empty Trash securely by default
+  raw: defaults write com.apple.finder EmptyTrashSecurely -bool true
+
+- name: Show the ~/Library folder
+  raw: chflags nohidden ~/Library
+
+# “General”, “Open with”, and “Sharing & Permissions”
+- name: Expand the following File Info panes
+  raw: defaults write com.apple.finder FXInfoPanesExpanded -dict \
+    General -bool true \
+    OpenWith -bool true \
+    Privileges -bool true

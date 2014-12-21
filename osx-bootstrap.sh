@@ -9,5 +9,5 @@ echo "provisining..."
 git clone https://github.com/dghubble/playbooks ~/sources/playbooks
 cd ~/sources
 
-ansible-playbook playbooks/osx-dev.yml -i "localhost," -c local
+ansible-playbook playbooks/osx-dev.yml -i "localhost," -c local --ask-sudo-pass
 echo "provisioning complete"

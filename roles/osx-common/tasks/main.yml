@@ -5,11 +5,18 @@
   homebrew: name={{ item }} state=present
   with_items:
     - ack
-    - curl
-    - git
-    - go
     - vim
     - wget
-- include: python.yml
+- include: general.yml
+- include: keyboard.yml
+- include: trackpad.yml
+- include: screen.yml
+- include: dock.yml
+- include: sound.yml
 - include: finder.yml
+# software and tools
+# - include: git.yml
+# - include: dotfiles.yml
+# - include: go.yml
+# - include: python.yml
 

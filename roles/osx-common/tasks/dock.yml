@@ -1,0 +1,31 @@
+---
+# Dock
+
+- name: Move the Dock orientation to the left
+  raw: defaults write com.apple.dock orientation left
+
+- name: Set the icon size of Dock items to 36 pixels
+  raw: defaults write com.apple.dock tilesize -int 36
+
+- name: Minimize windows into their application’s icon
+  raw: defaults write com.apple.dock minimize-to-application -bool true
+
+- name: Show indicator lights for open applications in the Dock
+  raw: defaults write com.apple.dock show-process-indicators -bool true
+
+# Wipe all (default) app icons from the Dock
+# This is only really useful when setting up a new Mac, or if you don’t use
+# the Dock to launch apps.
+#defaults write com.apple.dock persistent-apps -array
+
+- name: Don’t animate opening applications from the Dock
+  raw: defaults write com.apple.dock launchanim -bool false
+
+- name: Automatically hide and show the Dock
+  raw: defaults write com.apple.dock autohide -bool true
+
+- name: Remove the auto-hiding Dock delay
+  raw: defaults write com.apple.dock autohide-delay -float 0
+
+- name: Remove the animation when hiding/showing the Dock
+  raw: defaults write com.apple.dock autohide-time-modifier -float 0

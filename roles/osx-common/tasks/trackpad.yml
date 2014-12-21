@@ -1,0 +1,16 @@
+---
+# Trackpad and mouse
+
+# - name: Trackpad: enable tap to click for this user and for the login screen
+#   raw: defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+#   raw: defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+#   raw: defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+
+# - name: Trackpad: Map bottom right corner to right click
+#   raw: defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadCornerSecondaryClick -int 2
+#   raw: defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightClick -bool true
+#   raw: defaults -currentHost write NSGlobalDomain com.apple.trackpad.trackpadCornerClickBehavior -int 1
+#   raw: defaults -currentHost write NSGlobalDomain com.apple.trackpad.enableSecondaryClick -bool true
+
+- name: Disable natural scrolling
+  raw: defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false

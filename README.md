@@ -31,9 +31,8 @@ The following roles are used by the provided playbooks:
 Usage
 =====
 
-If your machine has a clean install of OSX:
+To bootstrap a fresh OSX install, run the following:
 
     curl -s https://raw.githubusercontent.com/dghubble/playbooks/master/osx-bootstrap.sh | bash
 
-to bootstrap the machine and run the osx-dev playbook to setup a new development machine.
-
+to setup Homebrew, Ansible, and git, the minimal tools needed to run the osx-dev playbook to provision a development machine.

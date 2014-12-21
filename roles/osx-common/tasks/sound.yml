@@ -1,0 +1,9 @@
+---
+# Sound
+
+- name: Disable the sound effects on boot
+  command: nvram SystemAudioVolume=" "
+  sudo: yes
+
+- name: Disable user interface sound effects
+  raw: defaults write com.apple.systemsound com.apple.sound.uiaudio.enabled -int 0

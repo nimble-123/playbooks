@@ -1,0 +1,9 @@
+---
+# Screen
+
+- name: Require password immediately after sleep or screen saver begins
+  raw: defaults write com.apple.screensaver askForPassword -int 1
+  raw: defaults write com.apple.screensaver askForPasswordDelay -int 0
+
+- name: Enable subpixel font rendering on non-Apple LCDs
+  raw: defaults write NSGlobalDomain AppleFontSmoothing -int 2

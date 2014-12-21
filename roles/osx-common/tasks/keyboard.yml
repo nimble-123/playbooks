@@ -1,0 +1,20 @@
+---
+# Keyboard
+
+- name: Enable full keyboad access for all controls (Tab in modals)
+  raw: defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
+
+- name: Disable press-and-hold for keys in favor of key repeat
+  raw: defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
+
+- name: Set the keyboard repeat rate to be reasonably fast
+  raw: defaults write NSGlobalDomain KeyRepeat -int 2
+
+- name: Automatically illuminate built-in MacBook keyboard in low light
+  raw: defaults write com.apple.BezelServices kDim -bool true
+
+- name: Turn off keyboard illumination when computer is not used for 5 minutes
+  raw: defaults write com.apple.BezelServices kDimTime -int 300
+
+- name: Stop iTunes from responding to keyboard media keys
+  raw: launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist 2> /dev/null

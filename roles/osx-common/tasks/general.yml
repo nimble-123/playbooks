@@ -1,0 +1,30 @@
+---
+# General preferences
+
+- name: Disable transparency in the menu bar and elsewhere on Yosemite
+  raw: defaults write com.apple.universalaccess reduceTransparency -bool true
+
+- name: Set sidebar icon size to medium
+  raw: defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 2
+
+- name: Always show scrollbars
+  raw: defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
+  # Possible values: `WhenScrolling`, `Automatic` and `Always`
+
+- name: Disable opening and closing window animations
+  raw: defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
+
+- name: Save to disk (not to iCloud) by default
+  raw: defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
+
+- name: Automatically quit printer app once the print jobs complete
+  raw: defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
+
+- name: Check for software updates daily not just once per week
+  raw: defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
+
+- name: Disable smart quotes as they’re annoying when typing code
+  raw: defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
+
+- name: Disable smart dashes as they’re annoying when typing code
+  raw: defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false

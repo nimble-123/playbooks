@@ -29,3 +29,6 @@
 
 - name: Remove the animation when hiding/showing the Dock
   raw: defaults write com.apple.dock autohide-time-modifier -float 0.05
+
+- name: Make Dock icons of hidden applications translucent
+  raw: defaults write com.apple.dock showhidden -bool false

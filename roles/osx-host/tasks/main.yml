@@ -1,0 +1,4 @@
+---
+# tasks file for osx-host
+
+- include: system.yml

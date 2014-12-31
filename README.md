@@ -2,7 +2,7 @@
 Ansible Playbooks
 =================
 
-Ansible Playbooks are suitable for provisioning and managing bare metal or virtual machines for different roles (e.g. development laptop, cloud VM container host images).
+Ansible Playbooks are suitable for provisioning and managing bare metal or virtual machines for different roles (e.g. development laptop, cloud VM container hosts).
 
 For provisioning application and service environments (e.g. running an API service, a CI installation, etc.), prefer container configuration specifications such as Docker instead.
 
@@ -26,13 +26,22 @@ The following roles are used by the provided playbooks:
 
 * osx-common
 * osx-gui
+* osx-host
 * osx-ci
 
 Usage
 =====
 
-To bootstrap a fresh OSX install, run the following:
+To bootstrap an OSX machine to run playbooks, run:
 
     curl -s https://raw.githubusercontent.com/dghubble/playbooks/master/osx-bootstrap.sh | bash
 
-to setup Homebrew, Ansible, and git, the minimal tools needed to run the osx-dev playbook to provision a development machine.
+This will ensure Homebrew is setup, Ansible is installed, a minimal git installation is available, and the latest playbooks sources have been fetched.
+
+To provision an OSX development machine, run:
+
+    ansible-playbook playbooks/osx-dev.yml -i "localhost," -c local --ask-sudo-pass
+
+To provision an OSX CI machine, run:
+
+    ansible-playbook playbooks/osx-ci.yml -i "localhost," -c local --ask-sudo-pass

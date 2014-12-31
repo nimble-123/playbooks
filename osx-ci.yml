@@ -1,6 +1,6 @@
 ---
-- name: OSX Dev Playbook
+- name: OSX CI Playbook
   hosts: all
   roles:
     - osx-common
-    - osx-gui
+    - osx-host

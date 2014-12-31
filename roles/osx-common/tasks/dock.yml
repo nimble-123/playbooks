@@ -21,11 +21,11 @@
 - name: Don’t animate opening applications from the Dock
   raw: defaults write com.apple.dock launchanim -bool false
 
-- name: Automatically hide and show the Dock
+- name: Autohide the Dock
   raw: defaults write com.apple.dock autohide -bool true
 
 - name: Remove the auto-hiding Dock delay
   raw: defaults write com.apple.dock autohide-delay -float 0
 
 - name: Remove the animation when hiding/showing the Dock
-  raw: defaults write com.apple.dock autohide-time-modifier -float 0
+  raw: defaults write com.apple.dock autohide-time-modifier -float 0.05

@@ -1,0 +1,11 @@
+---
+# dotfiles
+
+- name: Clone github.com/dghubble/dotfiles
+  git: repo=https://github.com/dghubble/dotfiles.git dest=~/dotfiles update=yes
+
+- name: Install GNU stow
+  homebrew: name=stow state=present
+
+- name: Stow git dotfiles package
+  command: stow git chdir=~/dotfiles

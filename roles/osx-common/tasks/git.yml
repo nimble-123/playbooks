@@ -1,0 +1,6 @@
+---
+# Git
+
+- name: Install the latest Git release
+  homebrew: name=git state=present
+

@@ -40,8 +40,8 @@ This will ensure Homebrew is setup, Ansible is installed, a minimal git installa
 
 To provision an OSX development machine, run:
 
-    ansible-playbook playbooks/osx-dev.yml -i "localhost," -c local --ask-sudo-pass
+    ansible-playbook osx-dev.yml -i "localhost," -c local --ask-sudo-pass
 
 To provision an OSX CI machine, run:
 
-    ansible-playbook playbooks/osx-ci.yml -i "localhost," -c local --ask-sudo-pass
+    ansible-playbook osx-ci.yml -i "localhost," -c local --ask-sudo-pass

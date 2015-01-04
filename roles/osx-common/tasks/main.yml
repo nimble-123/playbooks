@@ -1,6 +1,7 @@
 ---
 # tasks file for osx-common
 
+- include: update.yml
 - name: Install Homebrew packages
   homebrew: name={{ item }} state=present
   with_items:

@@ -1,29 +1,24 @@
 ---
-# OS X Python Development Environment Setup
+# OSX Python
 
 # Latest Python 2.7.x release, because the OS X default Python is not suitable for development.
 # brew install python
-# python --version ~ 2.7.6
+# python --version ~ 2.7.9
 - name: Install latest Python 2.7.x release
-  homebrew: name=python state=present
+  homebrew: name=python state=latest
 # Notes:
-# Includes pip (pip --version ~ 1.4.1, installed to /usr/local/lib/python2.7/site-packages)
-# Includes distribute (pip freeze shows ~ 0.7.3)
-# Use pip (no sudo) to install packages globally to /usr/local/lib/python2.7/site-packages 
+# Includes pip (pip --version ~ 6.0.6, installed to /usr/local/lib/python2.7/site-packages)
+# Use pip (no sudo) to install packages globally
 # Reference:
 # * Python releases http://www.python.org/download/releases/
-# * Homebrew Python Notes https://github.com/mxcl/homebrew/wiki/Homebrew-and-Python
+# * Homebrew Python Notes https://github.com/Homebrew/homebrew/tree/master/share/doc/homebrew#readme
 
 
 # Virtualenv - per-project Python package installation environments.
 # pip install virtualenv --upgrade
-# virtualenv --version ~ 1.11.2
+# virtualenv --version ~ 12.0.5
 - name: Install virtualenv (latest)
-  pip: name=virtualenv
-# Notes:
-# Installs to /usr/local/lib/python2.7/site-packages
-# Creates a copy of a specific version of Python (by default the version
-# virtualenv was installed with, 2.7.x)
+  pip: name=virtualenv state=latest
 # Usage:
 # virtualenv --distribute [--python=python3] venv 
 # source venv/bin/activate
@@ -32,13 +27,9 @@
 
 # Virtualenv-wrapper - per-project Python package installation environments isolated and stored in ~/.virtualenvs. Also provides env var scripts.
 # pip install virtualenvwrapper --upgrade
-# pip freeze shows ~ 4.2
+# pip freeze shows ~ 4.3.2
 - name: Install virtualenvwrapper (latest)
-  pip: name=virtualenvwrapper
-- name: Source virtualenvwrapper.sh in .bash_profile
-  lineinfile: dest=~/.bash_profile line="source /usr/local/bin/virtualenvwrapper.sh" state=present
-  tags:
-    - build-dotfiles
+  pip: name=virtualenvwrapper state=latest
 # Notes:
 # Installs to /usr/local/lib/python2.7/site-packages
 # Usage:
@@ -52,15 +43,15 @@
 
 # Latest Python 3.x.x release
 # brew install python3
-# python --version ~ 3.3.4
-- name: Install latest Python 3.x.x release
-  homebrew: name=python3 state=present
+# python3 --version ~ 3.4.2
+- name: Install latest Python 3.4.x release
+  homebrew: name=python3 state=latest
 # Notes:
-# Includes pip3 (pip3 --version ~ 1.4.1, installed to /usr/local/lib/python3.3/site-packages)
-# Use pip3 (no sudo) to install packages globally to /usr/local/lib/python3.3/site-packages 
+# Includes pip3 (pip3 --version ~ 6.0.3, installed to /usr/local/Cellar/python3/3.4.2_1/Frameworks/Python.framework/Versions/3.4/lib/python3.4/site-packages)
+# Use pip3 (no sudo) to install packages globally
 # Reference:
-# * Python releases http://www.python.org/download/releases/
-# * Homebrew Python Notes https://github.com/mxcl/homebrew/wiki/Homebrew-and-Python
+# * Python releases http://www.python.org/downloads/
+# * Homebrew Python Notes https://github.com/Homebrew/homebrew/tree/master/share/doc/homebrew#readme
 
 
 

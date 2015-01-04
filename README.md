@@ -40,7 +40,10 @@ This will ensure Homebrew is setup, Ansible is installed, a minimal git installa
 
 To provision an OSX development machine, run:
 
+    # tasks requiring sudo only need to be run the first time
     ansible-playbook osx-dev.yml -i "localhost," -c local --ask-sudo-pass
+    # subsequent executations can skip providing the sudo password
+    ansible-playbook osx-dev.yml -i "localhost," -c local --skip-tags sudo
 
 To provision an OSX CI machine, run:
 

@@ -17,6 +17,6 @@
 # software and tools
 - include: dotfiles.yml
 - include: git.yml
-# - include: go.yml
 # - include: python.yml
+# - include: go.yml
 

@@ -1,7 +1,7 @@
 ---
 # dotfiles
 
-- name: Clone github.com/dghubble/dotfiles
+- name: Update github.com/dghubble/dotfiles
   git: repo=https://github.com/dghubble/dotfiles.git dest=~/dotfiles update=yes
 
 - name: Install GNU stow

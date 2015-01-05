@@ -1,5 +1,5 @@
 ---
 # Update dghubble/playbooks
 
-- name: Fast-forward merge github.com/dghubble/playbooks if possible
+- name: Update github.com/dghubble/playbooks
   git: repo=https://github.com/dghubble/playbooks.git dest=~/sources/playbooks update=yes

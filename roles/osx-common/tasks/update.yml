@@ -1,5 +1,0 @@
----
-# Update dghubble/playbooks
-
-- name: Update github.com/dghubble/playbooks
-  git: repo=https://github.com/dghubble/playbooks.git dest=~/sources/playbooks update=yes

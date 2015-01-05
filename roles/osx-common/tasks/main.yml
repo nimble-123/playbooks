@@ -1,13 +1,7 @@
 ---
 # tasks file for osx-common
 
-- include: update.yml
-- name: Install Homebrew packages
-  homebrew: name={{ item }} state=present
-  with_items:
-    - ack
-    - vim
-    - wget
+- include: self.yml
 - include: general.yml
 - include: keyboard.yml
 - include: trackpad.yml

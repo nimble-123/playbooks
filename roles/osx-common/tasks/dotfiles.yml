@@ -7,5 +7,14 @@
 - name: Install GNU stow
   homebrew: name=stow state=present
 
-- name: Stow git dotfiles package
-  command: stow git chdir=~/dotfiles
+- name: stow git dotfiles package
+  command: stow -v git chdir=~/dotfiles
+  register: stow_git
+  changed_when: '"LINK" in stow_git.stdout'
+
+# some machines already have ~/.bash_profile and ~/.bashrc, stow safely fails
+- name: stow bash dotfiles package
+  command: stow -v bash chdir=~/dotfiles
+  register: stow_bash
+  changed_when: '"LINK" in stow_bash.stdout'
+  failed_when: false      # stow failure should not be considered a failure

@@ -16,25 +16,16 @@ First, bootstrap your OSX machine, which will install Homebrew, Ansible, and git
 To perform one-time, elevated privilege tasks like removing boot sound effects and wiping the Dock, run the following and provide your password when prompted.
 
     cd ~/sources/playbooks
-    ansible-playbook osx-once.yml -i "localhost," -c local --ask-sudo-pass
+    ansible-playbook osx-once.yml -i local --ask-sudo-pass
 
 #### Provision/Update
 
 To perform provisioning tasks or update a provisioned machine, run:
 
     cd ~/sources/playbooks
-    ansible-playbook osx-dev.yml -i "localhost," -c local --skip-tags=secrets
+    ansible-playbook osx-dev.yml -i local
 
-Tags:
-
-  * secrets - skip these tasks unless the secrets volume has been loaded
-
-Running the osx-dev.yml playbook without options executes several tasks
-needing sudo permissions (labeled 'sudo') so add `--ask-sudo-pass`. The sudo
-tasks only need to be run once so after that they can be skipped.
-
-    # include sudo tasks
-    ansible-playbook osx-dev.yml -i "localhost," -c local --ask-sudo-pass
+### OSX Server / CI
 
 To provision an OSX CI machine, run:
 

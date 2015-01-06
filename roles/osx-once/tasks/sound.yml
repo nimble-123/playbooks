@@ -1,0 +1,7 @@
+---
+# Sound
+
+- name: Disable the sound effects on boot
+  command: nvram SystemAudioVolume=" "
+  sudo: yes
+  tags: sudo

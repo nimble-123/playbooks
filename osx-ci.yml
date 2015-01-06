@@ -1,5 +1,5 @@
 ---
-- name: OSX CI Playbook
+- name: osx-ci Playbook
   hosts: all
   roles:
     - osx-common

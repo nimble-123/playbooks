@@ -1,5 +1,5 @@
 ---
-- name: OSX Dev Playbook
+- name: osx-dev Playbook
   hosts: all
   roles:
     - osx-common

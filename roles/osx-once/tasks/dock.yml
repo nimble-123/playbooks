@@ -1,0 +1,6 @@
+---
+# Dock
+
+# This is only really useful when setting up a new Mac
+- name: Wipe all (default) app icons from the Dock
+  raw: defaults write com.apple.dock persistent-apps -array

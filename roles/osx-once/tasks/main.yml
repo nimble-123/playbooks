@@ -1,0 +1,5 @@
+---
+# tasks file for osx-once
+
+- include: sound.yml
+- include: dock.yml

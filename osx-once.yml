@@ -1,0 +1,5 @@
+---
+- name: osx-once Playbook
+  hosts: all
+  roles:
+    - osx-once

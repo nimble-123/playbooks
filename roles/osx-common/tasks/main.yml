@@ -9,12 +9,6 @@
 - include: dock.yml
 - include: sound.yml
 - include: finder.yml
-# software and tools
-- include: dotfiles.yml
-- include: git.yml
-- include: python.yml
-- include: go.yml
-# - include: java.yml
 # encrypted volume secrets
 - include: secrets.yml
 

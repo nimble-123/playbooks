@@ -1,0 +1,8 @@
+---
+# tasks file for osx-dev
+
+- include: dotfiles.yml
+- include: git.yml
+- include: python.yml
+- include: go.yml
+# - include: java.yml

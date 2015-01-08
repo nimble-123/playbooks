@@ -3,4 +3,5 @@
   hosts: all
   roles:
     - osx-common
+    - osx-dev
     - osx-gui

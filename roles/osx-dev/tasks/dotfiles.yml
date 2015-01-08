@@ -1,20 +1,16 @@
 ---
-# dotfiles
+# Updates a git repo of dotfiles and stow symlinks the desired packages
 
-- name: Update github.com/dghubble/dotfiles
-  git: repo=https://github.com/dghubble/dotfiles.git dest=~/dotfiles update=yes
+- name: Update dotfiles
+  git: repo={{ dotfiles.repo_url }} dest={{ dotfiles.repo_path }} update=yes
 
 - name: Install GNU stow
   homebrew: name=stow state=present
 
 - name: stow git dotfiles package
-  command: stow -v git chdir=~/dotfiles
-  register: stow_git
-  changed_when: '"LINK" in stow_git.stdout'
-
-# some machines already have ~/.bash_profile and ~/.bashrc, stow safely fails
-- name: stow bash dotfiles package
-  command: stow -v bash chdir=~/dotfiles
-  register: stow_bash
-  changed_when: '"LINK" in stow_bash.stdout'
-  failed_when: false      # stow failure should not be considered a failure
+  command: stow {{ item.package }} chdir={{ dotfiles.repo_path }}
+  register: stow_package
+  changed_when: '"LINK" in stow_package.stdout'
+  failed_when: false       # stow safely fails when links already exist
+  with_items:
+    - "{{dotfiles.packages}}"

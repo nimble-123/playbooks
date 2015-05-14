@@ -7,13 +7,14 @@ Ansible Playbooks are suitable for provisioning and managing bare metal or virtu
 
 ### Debian/Ubuntu
 
-#### Bootstrap
-
-Bootstrap the machine by installing ansible and git.
+Bootstrap the local machine by installing ansible and git.
 
     wget -O - https://raw.githubusercontent.com/dghubble/playbooks/master/debian.sh | bash
 
-####
+Provision/update the local machine by running
+
+    cd ~/sources/playbooks
+    ansible-playbook debian.yml -i local --ask-sudo-pass 
 
 ### OSX
 
@@ -52,7 +53,7 @@ These scripts are useful for getting a clean machine to a state where it has Ans
 
 ### Playbooks
 
-* debian-dev - Debian development machine
+* debian - Debian development machine
 * osx-dev - OSX development machine
 * osx-ci - OSX Jenkins CI, prefer a Dockerized Jenkins on Linux over bare metal OSX box
 
@@ -60,6 +61,8 @@ These scripts are useful for getting a clean machine to a state where it has Ans
 
 The following roles are used by the playbooks:
 
+* dotfiles
+* debian/secrets
 * osx-common
 * osx-dev
 * osx-gui

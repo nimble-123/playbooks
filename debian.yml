@@ -1,0 +1,13 @@
+---
+- name: debian Playbook
+  hosts: all
+  vars:
+    dotfiles:
+      repo_url: https://github.com/dghubble/dotfiles.git
+      repo_path: ~/dotfiles
+      packages:
+        - bash
+        - git
+  roles:
+    - debian/secrets
+    - dotfiles

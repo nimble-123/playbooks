@@ -1,16 +1,16 @@
-echo "### OSX bootstrap ###"
-echo "Installing Homebrew."
+#!/bin/bash
+# To run this script
+# curl -s https://raw.githubusercontent.com/dghubble/playbooks/master/osx.sh | bash
+
+echo "### Playbooks Bootstrap (OSX)"
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-echo "Installing Ansible."
-brew install ansible
-echo "Installing git."
-brew install git
+brew install ansible git
 
 if [ ! -d ~/sources/playbooks ]; then
-  echo "Cloning playbooks."
+  echo "### Cloning playbooks"
   git clone https://github.com/dghubble/playbooks ~/sources/playbooks
 else
-  echo "Pulling the latest playbook changes."
+  echo "### Updating playbooks"
   cd ~/sources/playbooks
   git pull --ff-only
 fi

@@ -5,13 +5,23 @@ Ansible Playbooks are suitable for provisioning and managing bare metal or virtu
 
 ## Usage
 
+### Debian/Ubuntu
+
+#### Bootstrap
+
+Bootstrap the machine by installing ansible and git.
+
+    wget -O - https://raw.githubusercontent.com/dghubble/playbooks/master/debian.sh | bash
+
+####
+
 ### OSX
 
-#### Bootstrapping
+#### Bootstrap
 
 First, bootstrap your OSX machine, which will install Homebrew, Ansible, and git. Then it will clone this repository of playbooks.
 
-    curl -s https://raw.githubusercontent.com/dghubble/playbooks/master/osx-bootstrap.sh | bash
+    curl -s https://raw.githubusercontent.com/dghubble/playbooks/master/osx.sh | bash
 
 To perform one-time, elevated privilege tasks like removing boot sound effects and wiping the Dock, run the following and provide your password when prompted.
 

@@ -10,4 +10,5 @@
         - git
   roles:
     - debian/secrets
+    - debian/editors
     - dotfiles

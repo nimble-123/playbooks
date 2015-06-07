@@ -1,0 +1,21 @@
+---
+
+- name: sudo apt-get install emacs -y
+  apt: pkg=emacs state=present
+  sudo: yes
+
+- name: sudo apt-get install vim -y
+  apt: pkg=vim state=present
+  sudo: yes
+
+- name: Install python-pycurl package so apt_repository can be used
+  apt: pkg=python-pycurl state=present
+  sudo: yes
+
+- name: sudo add-apt-repository ppa:webupd8team/sublime-text-2 -y
+  apt_repository: repo="ppa:webupd8team/sublime-text-2" state=present
+  sudo: yes
+
+- name: sudo apt-get install sublime-text -y
+  apt: pkg=sublime-text state=present update_cache=yes
+  sudo: yes

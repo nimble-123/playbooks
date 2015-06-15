@@ -1,0 +1,6 @@
+---
+# osx elevated tasks
+
+- include: restart.yml
+- include: sound.yml
+- include: dock.yml

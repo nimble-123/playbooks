@@ -1,0 +1,6 @@
+---
+# System settings
+
+- name: Restart automatically if the computer freezes
+  raw: systemsetup -setrestartfreeze on
+  sudo: yes

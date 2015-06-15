@@ -11,4 +11,4 @@
   roles:
     - debian/secrets
     - debian/editors
-    - dotfiles
+    - debian/dotfiles

@@ -1,0 +1,11 @@
+---
+# osx system tasks
+
+- include: general.yml
+- include: keyboard.yml
+- include: trackpad.yml
+- include: screen.yml
+- include: dock.yml
+- include: sound.yml
+- include: finder.yml
+

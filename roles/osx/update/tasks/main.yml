@@ -1,0 +1,10 @@
+---
+# Update dghubble/playbooks
+
+- name: Update github.com/dghubble/playbooks
+  git: repo=https://github.com/dghubble/playbooks.git dest=~/sources/playbooks update=no
+  register: playbooks_repo
+
+- name: Fail if playbook updates are available
+  fail: msg="Playbook updates are available. Please pull the latest changes."
+  when: playbooks_repo.changed == true

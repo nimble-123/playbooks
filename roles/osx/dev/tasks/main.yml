@@ -1,0 +1,9 @@
+---
+# osx dev tasks
+
+- include: git.yml
+- include: python.yml
+- include: go.yml
+- include: virtual.yml
+- include: docker.yml
+- include: android.yml

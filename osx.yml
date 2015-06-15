@@ -1,0 +1,17 @@
+---
+- name: osx Playbook
+  hosts: all
+  vars:
+    dotfiles:
+      repo_url: https://github.com/dghubble/dotfiles.git
+      repo_path: ~/dotfiles
+      packages:
+        - { package: bash }
+        - { package: git }
+  roles:
+    - osx/update
+    - osx/system
+    - osx/secrets
+    - osx/dev
+    - osx/dotfiles
+    - osx/apps

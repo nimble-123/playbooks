@@ -1,0 +1,4 @@
+---
+
+- name: Install VirtualBox application
+  homebrew_cask: name=virtualbox state=present

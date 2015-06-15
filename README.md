@@ -1,71 +1,50 @@
 
-# Ansible Playbooks
+# Command Line Provisioning
 
-Ansible Playbooks are suitable for provisioning and managing bare metal or virtual machines for different roles (e.g. development laptop, cloud VM container hosts). For provisioning application or service environments (e.g. running an API service), prefer container configuration specifications, such as Docker.
+These Ansible playbooks provision a fresh laptop or VM to be an acceptable development environment. For application or service specific development environments, prefer container specifications such as Docker or rkt.
 
 ## Usage
 
 ### Debian/Ubuntu
 
-Bootstrap the local machine by installing ansible and git.
+Bootstrap the machine by installing Ansible, Git, and the playbooks.
 
-    wget -O - https://raw.githubusercontent.com/dghubble/playbooks/master/debian.sh | bash
+    wget -O - https://raw.githubusercontent.com/dghubble/playbooks/master/init/debian.sh | bash
 
-Provision/update the local machine by running
+Apply the debian playbook.
 
     cd ~/sources/playbooks
     ansible-playbook debian.yml -i local --ask-sudo-pass 
 
 ### OSX
 
-#### Bootstrap
+Bootstrap the machine by installing Homebrew, Ansible, Git, and the playbooks.
 
-First, bootstrap your OSX machine, which will install Homebrew, Ansible, and git. Then it will clone this repository of playbooks.
+    curl -s https://raw.githubusercontent.com/dghubble/playbooks/master/init/osx.sh | bash
 
-    curl -s https://raw.githubusercontent.com/dghubble/playbooks/master/osx.sh | bash
+Apply the playbooks requiring elevated privileges (first time only!).
 
-To perform one-time, elevated privilege tasks like removing boot sound effects and wiping the Dock, run the following and provide your password when prompted.
+	cd ~/sources/playbooks
+	ansible-playbook elevated/osx.yml -i local --ask-sudo-pass
 
-    cd ~/sources/playbooks
-    ansible-playbook osx-once.yml -i local --ask-sudo-pass
+Apply the osx playbook.
 
-#### Provision/Update
+	cd ~/sources/playbooks
+	ansible-playbook osx.yml -i local
 
-To perform provisioning tasks or update a provisioned machine, run:
-
-    cd ~/sources/playbooks
-    ansible-playbook osx-dev.yml -i local
-
-### OSX Server / CI
-
-To provision an OSX CI machine, run:
-
-    ansible-playbook osx-ci.yml -i "localhost," -c local --ask-sudo-pass
-
-## Contents
-
-### Bootstrappers
-
-These scripts are useful for getting a clean machine to a state where it has Ansible and this collection of playbooks and their roles.
-
-* debian-bootstrap.sh
-* osx-bootstrap.sh
-
-### Playbooks
+## Playbooks
 
 * debian - Debian development machine
-* osx-dev - OSX development machine
-* osx-ci - OSX Jenkins CI, prefer a Dockerized Jenkins on Linux over bare metal OSX box
+* osx - OSX development machine
 
-### Roles
+## Roles
 
-The following roles are used by the playbooks:
-
-* dotfiles
+* debian/dotfiles
+* debian/editors
 * debian/secrets
-* osx-common
-* osx-dev
-* osx-gui
-* osx-once
-* osx-host
-* osx-ci
+* osx/update
+* osx/system
+* osx/secrets
+* osx/dev
+* osx/dotfiles
+* osx/apps

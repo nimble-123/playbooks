@@ -1,0 +1,5 @@
+---
+- name: elevated-osx Playbook
+  hosts: all
+  roles:
+    - osx/elevated

@@ -25,12 +25,16 @@ Bootstrap the machine by installing Homebrew, Ansible, Git, and the playbooks.
 Apply the playbooks requiring elevated privileges (first time only!).
 
 	cd ~/sources/playbooks
-	ansible-playbook elevated/osx.yml -i local --ask-sudo-pass
+	ansible-playbook elevated-osx.yml -i local --ask-sudo-pass
 
 Apply the osx playbook.
 
 	cd ~/sources/playbooks
 	ansible-playbook osx.yml -i local
+
+Options
+
+	--skip-tags secrets
 
 ## Playbooks
 

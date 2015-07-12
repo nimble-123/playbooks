@@ -7,3 +7,4 @@
 - include: docker.yml
 - include: android.yml
 - include: google-cloud.yml
+- include: aws.yml

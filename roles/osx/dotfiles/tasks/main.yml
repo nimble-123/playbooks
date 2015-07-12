@@ -2,7 +2,12 @@
 # Updates a git repo of dotfiles and stow symlinks the desired packages
 
 - name: Update dotfiles
-  git: repo={{ dotfiles.repo_url }} dest={{ dotfiles.repo_path }} update=yes
+  git: repo={{dotfiles.repo_url}} dest={{dotfiles.repo_path}} update=no
+  register: dotfiles_repo
+
+- name: Msg if dotfiles updates are available
+  debug: msg="Dotfiles updates are available. Consider pulling the latest changes."
+  when: dotfiles_repo.changed == true
 
 - name: Install GNU stow
   homebrew: name=stow state=present

@@ -1,0 +1,23 @@
+---
+
+- name: Check for existence of ~/sources/google-cloud-sdk/bin/gcloud
+  stat: path=~/sources/google-cloud-sdk/bin/gcloud
+  register: sdkcmd
+
+- name: Add a directory for google-cloud-sdk
+  file: path=~/sources/google-cloud-sdk state=directory
+
+- name: Get the Google Cloud SDK
+  get_url: url=https://dl.google.com/dl/cloudsdk/release/google-cloud-sdk.tar.gz dest=~/sources/google-cloud-sdk.tar.gz
+  when: sdkcmd.stat.exists == false
+
+- name: Untar Google Cloud SDK
+  unarchive: src=~/sources/google-cloud-sdk.tar.gz dest=~/sources copy=no
+  when: sdkcmd.stat.exists == false
+
+- name: Install Google Cloud SDK
+  command: ./install.sh chdir=~/sources/google-cloud-sdk
+  when: sdkcmd.stat.exists == false
+
+- name: Delete the .tag.gz for Google Cloud SDK
+  file: path=~/sources/google-cloud-sdk.tar.gz state=absent

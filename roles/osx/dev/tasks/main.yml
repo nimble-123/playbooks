@@ -6,3 +6,4 @@
 - include: go.yml
 - include: docker.yml
 - include: android.yml
+- include: google-cloud.yml

@@ -1,6 +1,7 @@
 ---
 # osx dev tasks
 
+- include: tools.yml
 - include: git.yml
 - include: python.yml
 - include: go.yml

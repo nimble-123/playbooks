@@ -6,9 +6,6 @@
 - name: Install Android Studio
   homebrew_cask: name=android-studio state=present
 
-- name: Install Android Studio Canary
-  homebrew_cask: name=android-studio-canary state=present
-
 - name: Install Genymotion
   homebrew_cask: name=genymotion state=present
 

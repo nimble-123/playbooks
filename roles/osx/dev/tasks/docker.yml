@@ -3,9 +3,6 @@
 - name: Install Docker
   homebrew: name=docker state=latest
 
-- name: Install boot2docker
-  homebrew: name=boot2docker state=latest
-
 - name: Install docker-compose
   homebrew: name=docker-compose state=latest
 

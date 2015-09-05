@@ -15,6 +15,5 @@
     - osx/dotfiles
     - osx/cask
     - osx/dev
-    - osx/apps
   environment:
     PATH: "{{ ansible_env.PATH }}:/usr/local/bin"

@@ -8,3 +8,23 @@
 
 - name: Add the Caskroom Versions Tap
   homebrew_tap: tap=caskroom/versions state=present
+
+# general OSX apps
+
+- name: Install Google Chrome
+  homebrew_cask: name=google-chrome state=present
+
+- name: Install iterm2 application
+  homebrew_cask: name=iterm2 state=present
+
+- name: Install Moom application
+  homebrew_cask: name=moom state=present
+
+- name: Install sublime-text application
+  homebrew_cask: name=sublime-text state=present
+
+- name: Install Dropbox application
+  homebrew_cask: name=dropbox state=present
+
+- name: Install 1Password
+  homebrew_cask: name=1password state=present

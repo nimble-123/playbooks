@@ -1,7 +1,7 @@
 ---
 # Go
 
-# go version ~ go1.4 darwin/amd64
+# go version ~ go1.5 darwin/amd64
 - name: Install the latest Go release
   homebrew: name=go state=latest install_options=cross-compile-common
 # Notes:
@@ -10,17 +10,10 @@
 # target platform. --cross-compile-common ensures that all target architectures
 # for the linux, windows, and darwin OSs are built.
 #
-# Installs go source workspace to /usr/local/Cellar/go/1.4/libexec. The archived
+# Installs go source workspace to /usr/local/Cellar/go/1.5/libexec. The archived
 # packages for each target can be found in pkg. Homebrew symlinks /usr/local/bin/go
-# to /usr/local/Cellar/1.4/bin/go, which is itself a symlink to ../libexec/bin/go.
+# to /usr/local/Cellar/1.5/bin/go, which is itself a symlink to ../libexec/bin/go.
 # The same is done for the gofmt executable.
 #
 # Be sure to set the GOPATH to your workspace and (optionally) add its bin dir to
 # your PATH (PATH=$PATH:$GOPATH/bin).
-
-- name: Create the Go workspace
-  file: path=~/workspace/go/{{ item.path }} state=directory
-  with_items:
-    - { path: src }
-    - { path: pkg }
-    - { path: bin }

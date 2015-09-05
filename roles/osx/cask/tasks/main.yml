@@ -20,6 +20,12 @@
 - name: Install Moom application
   homebrew_cask: name=moom state=present
 
+- name: Install Virtualbox
+  homebrew_cask: name=virtualbox state=present
+
+- name: Install Vagrant
+  homebrew_cask: name=vagrant state=present
+
 - name: Install sublime-text application
   homebrew_cask: name=sublime-text state=present
 

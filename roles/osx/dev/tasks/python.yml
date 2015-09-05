@@ -53,5 +53,9 @@
 # * Python releases http://www.python.org/downloads/
 # * Homebrew Python Notes https://github.com/Homebrew/homebrew/tree/master/share/doc/homebrew#readme
 
+- name: Install Sphinx
+  pip: name=sphinx state=latest
 
+- name: Install mkdocs
+  pip: name=mkdocs state=latest
 

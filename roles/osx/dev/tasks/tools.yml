@@ -5,3 +5,6 @@
 
 - name: Install libtool
   homebrew: name=libtool state=present
+
+- name: Install z tool
+  homebrew: name=z state=latest

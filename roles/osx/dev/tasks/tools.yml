@@ -8,3 +8,6 @@
 
 - name: Install z tool
   homebrew: name=z state=latest
+
+- name: Install GNU Privacy Guard (GPG)
+  homebrew: name=gnupg state=latest

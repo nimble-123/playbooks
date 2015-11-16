@@ -1,0 +1,18 @@
+---
+# setup config files
+# for iterm, moom, sublime
+
+- name: Create an sync'd config directory
+  file: path=~/drive/config state=directory mode=0700
+
+- name: Create ~/.config symlink
+  file: src=~/drive/config dest=~/.config state=link
+
+- name: Check for existence of /Volumes/nagini/config
+  stat: path=/Volumes/nagini/config
+  register: volume
+
+# never override existing files (force=no)
+- name: Copy config files from volume
+  copy: src=/Volumes/nagini/config/ dest=~/drive/config force=no mode=0600
+  when: volume.stat.exists == true

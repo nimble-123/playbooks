@@ -9,11 +9,11 @@
 # - name: Install Genymotion
 #   homebrew_cask: name=genymotion state=present
 
+# Android SDK
+
 - name: Check for ~/sources/android-sdk-macosx
   stat: path=~/sources/android-sdk-macosx
   register: sdk
-
-# Android SDK
 
 - name: Add the Android SDK directory
   file: path=~/sources/android-sdk-macosx state=directory

@@ -11,8 +11,7 @@
   roles:
     - osx/update
     - osx/system
-    - osx/secrets
-    - osx/dotfiles
+    - osx/files
     - osx/cask
     - osx/dev
   environment:

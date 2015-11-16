@@ -17,8 +17,17 @@
 - name: Install iterm2 application
   homebrew_cask: name=iterm2 state=present
 
-- name: Install Moom application
-  homebrew_cask: name=moom state=present
+- name: Install sublime-text application
+  homebrew_cask: name=sublime-text state=present
+
+- name: Install Dropbox application
+  homebrew_cask: name=dropbox state=present
+
+- name: Install Google Drive application
+  homebrew_cask: name=google-drive state=present
+
+- name: Install 1Password
+  homebrew_cask: name=1password state=present
 
 - name: Install Virtualbox
   homebrew_cask: name=virtualbox state=present
@@ -26,11 +35,5 @@
 - name: Install Vagrant
   homebrew_cask: name=vagrant state=present
 
-- name: Install sublime-text application
-  homebrew_cask: name=sublime-text state=present
-
-- name: Install Dropbox application
-  homebrew_cask: name=dropbox state=present
-
-- name: Install 1Password
-  homebrew_cask: name=1password state=present
+- name: Install Moom application
+  homebrew_cask: name=moom state=present

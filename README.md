@@ -32,23 +32,7 @@ Apply the osx playbook.
 	cd ~/sources/playbooks
 	ansible-playbook osx.yml -i local
 
-Options
-
-	--skip-tags secrets
-
 ## Playbooks
 
 * debian - Debian development machine
 * osx - OSX development machine
-
-## Roles
-
-* debian/dotfiles
-* debian/editors
-* debian/secrets
-* osx/update
-* osx/system
-* osx/secrets
-* osx/dev
-* osx/dotfiles
-* osx/apps

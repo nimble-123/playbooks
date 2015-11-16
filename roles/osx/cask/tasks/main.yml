@@ -37,3 +37,7 @@
 
 - name: Install Moom application
   homebrew_cask: name=moom state=present
+
+- name: Install Slack Chat
+  homebrew_cask: name=slack state=present
+

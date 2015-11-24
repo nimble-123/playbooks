@@ -12,6 +12,9 @@ usermod -a -G vboxusers dghubble
 # Desktop
 dnf install -yq gnome-tweak-tool
 
+# Security
+dnf install -yq keepassx
+
 # Photos
 dnf install -yq gimp
 

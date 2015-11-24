@@ -1,24 +1,26 @@
 
-# Command Line Provisioning
+# Phoenix
 
-These Ansible playbooks provision a fresh laptop or VM to be an acceptable development environment. For application or service specific development environments, prefer container specifications such as Docker or rkt.
+Phoenix includes scripts and Ansible playbooks to provision a laptop or VM to be an acceptable development environment.
 
 ## Usage
 
-### Debian/Ubuntu
+### Fedora 23
 
-Bootstrap the machine by installing Ansible, Git, and the playbooks.
+Bootstrap the machine by installing Ansible and cloning Phoenix.
 
-    wget -O - https://raw.githubusercontent.com/dghubble/playbooks/master/init/debian.sh | bash
+    curl -s https://raw.githubusercontent.com/dghubble/playbooks/master/init/fedora.sh | bash
 
-Apply the debian playbook.
+Apply the configuration.
 
-    cd ~/sources/playbooks
-    ansible-playbook debian.yml -i local --ask-sudo-pass 
+    cd ~/sources/phoenix/scripts
+    sudo ./laptop.sh
 
-### OSX
+See the [docs](https://www.dghubble.io/setup/fedora) to complete setup.
 
-Bootstrap the machine by installing Homebrew, Ansible, Git, and the playbooks.
+### OSX 10.11
+
+Bootstrap the machine by installing Homebrew, Ansible, Git, and cloning Phoenix.
 
     curl -s https://raw.githubusercontent.com/dghubble/playbooks/master/init/osx.sh | bash
 
@@ -32,7 +34,23 @@ Apply the osx playbook.
 	cd ~/sources/playbooks
 	ansible-playbook osx.yml -i local
 
-## Playbooks
+### Debian/Ubuntu
 
-* debian - Debian development machine
-* osx - OSX development machine
+Bootstrap the machine by installing Ansible, Git, and the playbooks.
+
+    wget -O - https://raw.githubusercontent.com/dghubble/playbooks/master/init/debian.sh | bash
+
+Apply the debian playbook.
+
+    cd ~/sources/playbooks
+    ansible-playbook debian.yml -i local --ask-sudo-pass
+
+## Provisioning Profiles
+
+* Fedora 23
+    - Laptop
+    - Vagrant VM
+* OSX 10.11
+    - Laptop
+* Debian - Debian development machine (not used)
+

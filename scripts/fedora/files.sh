@@ -22,7 +22,7 @@ fi
 
 if [ ! -d ${HOME}/config/dotfiles ]; then
   echo "Cloning dotfiles..."
-  mkdir -p {HOME}/Dropbox/config
+  mkdir -p ${HOME}/Dropbox/config
   git clone https://github.com/dghubble/dotfiles ${HOME}/config/dotfiles
 else
   echo "Updating dotfiles..."

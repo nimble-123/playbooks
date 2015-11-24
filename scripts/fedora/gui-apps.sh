@@ -1,5 +1,14 @@
 #!/bin/bash -e
 
+echo "Installing Dropbox..."
+dnf install -yq pygpgme
+dnf install -yq nautilus-dropbox
+
+# Virtual Machines
+echo "Installing VirtualBox..."
+dnf install -yq VirtualBox-5.0
+usermod -a -G vboxusers dghubble
+
 # Desktop
 dnf install -yq gnome-tweak-tool
 
@@ -19,5 +28,5 @@ dnf install -yq google-chrome-stable
 dnf install -yq pidgin
 # c'mon slack :/
 
-
-
+# Networking
+dnf install -yq wireshark-gnome

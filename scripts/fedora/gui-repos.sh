@@ -24,6 +24,3 @@ dnf config-manager -y --add-repo http://download.virtualbox.org/virtualbox/rpm/f
 
 # Update package lists
 dnf update -y
-
-
-

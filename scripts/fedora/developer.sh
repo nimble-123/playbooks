@@ -10,11 +10,8 @@ dnf install -yq python python3 python-pip
 pip install virtualenv
 pip install -q mkdocs sphinx  # docs
 
-# Virtual Machines
-echo "Installing VirtualBox..."
-dnf install -yq VirtualBox-5.0
-usermod -a -G vboxusers dghubble
-
+# Virtualization
+dnf install -yq libvirt
 dnf install -yq vagrant
 
 # Containers
@@ -22,5 +19,3 @@ dnf install -yq docker docker-compose
 
 # Network
 dnf install -yq wireshark wireshark-gnome
-
-

@@ -7,7 +7,7 @@ sudo dnf install -yq git
 echo "Installing Ansible..."
 sudo dnf install -yq ansible
 
-if [ ! -d ~/sources/playbooks ]; then
+if [ ! -d ~/sources/phoenix ]; then
   echo "Cloning Phoenix..."
   git clone https://github.com/dghubble/playbooks ~/sources/phoenix
 else

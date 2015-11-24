@@ -21,6 +21,7 @@ fi
 # Dotfiles
 
 if [ ! -d ${HOME}/config/dotfiles ]; then
+  mkdir -p {HOME}/Dropbox/config
   git clone https://github.com/dghubble/dotfiles ${HOME}/config/dotfiles
 else
   cd ${HOME}/config/dotfiles && git pull --ff-only
@@ -30,7 +31,6 @@ stow -t ${HOME} -d ${HOME}/config/dotfiles git
 
 # TODO: stow can't seem to force override, fix this hack
 rm ~/.bash_profile
-rm ~/.profile
 rm ~/.bashrc
 stow -t ${HOME} -d ${HOME}/config/dotfiles bash
 

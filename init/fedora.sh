@@ -1,7 +1,4 @@
 #!/bin/bash -e
-# To run this script
-# wget -O - https://raw.githubusercontent.com/dghubble/playbooks/master/init/fedora.sh | bash
-
 echo "Phoenix Bootstrap (Fedora)"
 
 echo "Installing git..."

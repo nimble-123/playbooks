@@ -11,12 +11,13 @@ Bootstrap the machine by installing Ansible and cloning Phoenix.
 
     curl -s https://raw.githubusercontent.com/dghubble/playbooks/master/init/fedora.sh | bash
 
-Apply the configuration.
+Apply the VM or laptop configuration.
 
     cd ~/sources/phoenix/scripts/fedora
+    sudo ./vm.sh         # VM only, no GUI or secrets
     sudo ./laptop.sh
 
-See the [docs](https://www.dghubble.io/setup/fedora) to complete setup.
+See the [docs](https://www.dghubble.io/setup/fedora/) to complete setup.
 
 ### OSX 10.11
 
@@ -33,6 +34,8 @@ Apply the osx playbook.
 
 	cd ~/sources/playbooks
 	ansible-playbook osx.yml -i local
+
+See the [docs](https://www.dghubble.io/setup/osx/) to complete setup.
 
 ### Debian/Ubuntu
 

@@ -1,10 +1,10 @@
 ---
 
 - name: Install Docker
-  homebrew: name=docker state=latest
+  homebrew: name=docker state=present
 
 - name: Install docker-compose
-  homebrew: name=docker-compose state=latest
+  homebrew: name=docker-compose state=present
 
 - name: Install docker-machine
-  homebrew: name=docker-machine state=latest
+  homebrew: name=docker-machine state=present

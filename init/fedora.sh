@@ -3,7 +3,11 @@
 # wget -O - https://raw.githubusercontent.com/dghubble/playbooks/master/init/fedora.sh | bash
 
 echo "Phoenix Bootstrap (Fedora)"
-sudo dnf update -y
+
+echo "Installing git..."
+sudo dnf install -yq git
+
+echo "Installing Ansible..."
 sudo dnf install -yq ansible
 
 if [ ! -d ~/sources/playbooks ]; then

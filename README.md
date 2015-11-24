@@ -13,7 +13,7 @@ Bootstrap the machine by installing Ansible and cloning Phoenix.
 
 Apply the configuration.
 
-    cd ~/sources/phoenix/scripts
+    cd ~/sources/phoenix/scripts/fedora
     sudo ./laptop.sh
 
 See the [docs](https://www.dghubble.io/setup/fedora) to complete setup.

@@ -6,3 +6,4 @@
 ./gui-apps.sh
 sudo -u ${USERNAME} ./secure.sh
 sudo -u ${USERNAME} ./files.sh
+echo "Finished"

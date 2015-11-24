@@ -26,7 +26,7 @@ if [ ! -d ${HOME}/config/dotfiles ]; then
   git clone https://github.com/dghubble/dotfiles ${HOME}/config/dotfiles
 else
   echo "Updating dotfiles..."
-  cd ${HOME}/config/dotfiles && git pull --ff-only
+  cd ${HOME}/config/dotfiles && git pull origin master --ff-only
 fi
 
 stow -t ${HOME} -d ${HOME}/config/dotfiles git

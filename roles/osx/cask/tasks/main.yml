@@ -23,8 +23,9 @@
 - name: Install Dropbox application
   homebrew_cask: name=dropbox state=present
 
-- name: Install Google Drive application
-  homebrew_cask: name=google-drive state=present
+# Doesn't support Linux
+# - name: Install Google Drive application
+#   homebrew_cask: name=google-drive state=present
 
 - name: Install 1Password
   homebrew_cask: name=1password state=present

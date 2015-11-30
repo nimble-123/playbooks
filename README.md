@@ -37,17 +37,6 @@ Apply the osx playbook.
 
 See the [docs](https://www.dghubble.io/setup/osx/) to complete setup.
 
-### Debian/Ubuntu
-
-Bootstrap the machine by installing Ansible, Git, and the playbooks.
-
-    wget -O - https://raw.githubusercontent.com/dghubble/playbooks/master/init/debian.sh | bash
-
-Apply the debian playbook.
-
-    cd ~/sources/playbooks
-    ansible-playbook debian.yml -i local --ask-sudo-pass
-
 ## Provisioning Profiles
 
 * Fedora 23
@@ -55,5 +44,4 @@ Apply the debian playbook.
     - Vagrant VM
 * OSX 10.11
     - Laptop
-* Debian - Debian development machine (not used)
 

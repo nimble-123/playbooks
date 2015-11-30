@@ -1,5 +1,5 @@
 ---
 
 - include: dotfiles.yml
-- include: config.yml
+- include: symlinks.yml
 - include: secrets.yml

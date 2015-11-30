@@ -3,11 +3,6 @@
 
 # Regular Symbolic links
 
-if [ ! -d ${HOME}/Dropbox ]; then
-	echo "Creating Dropbox directory"
-	mkdir ${HOME}/Dropbox
-fi
-
 if [ ! -h ~/workspace ]; then
 	echo "Creating workspace symlink"
 	ln -s ${HOME}/Dropbox/workspace ${HOME}/workspace
@@ -30,9 +25,10 @@ else
 fi
 
 stow -t ${HOME} -d ${HOME}/config/dotfiles git
+stow -t ${HOME} -d ${HOME}/config/dotfiles vim
 
 # TODO: stow can't seem to force override, fix this hack
-rm ~/.bash_profile
-rm ~/.bashrc
+mv ~/.bash_profile ~/.bash_profile.old
+mv ~/.bashrc ~/.bashrc.old
 stow -t ${HOME} -d ${HOME}/config/dotfiles bash
 

@@ -1,0 +1,8 @@
+---
+# symlinks, except for dotfiles
+
+- name: Create ~/workspace symlink
+  file: src=~/Dropbox/workspace dest=~/workspace state=link
+
+- name: Create ~/.config symlink
+  file: src=~/Dropbox/config dest=~/.config state=link

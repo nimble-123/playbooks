@@ -13,7 +13,7 @@
   homebrew: name=stow state=present
 
 - name: stow dotfile packages
-  command: stow {{ item }} -t ~
+  command: stow -t ~ -d {{dotfiles.repo_path}} {{ item }}
   args:
     chdir: "{{ dotfiles.repo_path }}"
   register: stow_package

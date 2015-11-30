@@ -4,10 +4,11 @@
   vars:
     dotfiles:
       repo_url: https://github.com/dghubble/dotfiles.git
-      repo_path: ~/dotfiles
+      repo_path: ~/Dropbox/config/dotfiles
       packages:
         - bash
         - git
+        - vim
   roles:
     - osx/update
     - osx/system

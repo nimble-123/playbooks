@@ -3,12 +3,12 @@
 
 if [ ! -h ~/.ssh ]; then
 	echo "Creating .ssh symlink"
-	rm -rf ${HOME}/.ssh
-	ln -s ${HOME}/.secrets/online/ssh ${HOME}/.ssh
+	rm -rf ~/.ssh
+	ln -s ~/.secrets/common/ssh/ ~/.ssh
 fi
 
 if [ ! -h ~/.gnupg ]; then
 	echo "Creating .gnupg symlink"
-	rm -rf ${HOME}/.gnupg
-	ln -s ${HOME}/.secrets/online/gpg ${HOME}/.gnupg
+	rm -rf ~/.gnupg
+	ln -s ~/.secrets/common/gpg ~/.gnupg
 fi

@@ -5,30 +5,25 @@
 
 if [ ! -h ~/workspace ]; then
 	echo "Creating workspace symlink"
-	ln -s ${HOME}/Dropbox/workspace ${HOME}/workspace
-fi
-
-if [ ! -h ~/config ]; then
-	echo "Creating config symlink"
-	ln -s ${HOME}/Dropbox/config ${HOME}/config
+	ln -s ~/Dropbox/workspace ~/workspace
 fi
 
 # Dotfiles
 
-if [ ! -d ${HOME}/config/dotfiles ]; then
+if [ ! -d ~/Dropbox/config/dotfiles ]; then
   echo "Cloning dotfiles..."
-  mkdir -p ${HOME}/Dropbox/config
-  git clone https://github.com/dghubble/dotfiles ${HOME}/config/dotfiles
+  mkdir -p ~/Dropbox/config
+  git clone https://github.com/dghubble/dotfiles ~/Dropbox/config/dotfiles
 else
   echo "Updating dotfiles..."
-  cd ${HOME}/config/dotfiles && git pull origin master --ff-only
+  cd ~/Dropbox/config/dotfiles && git pull origin master --ff-only
 fi
 
-stow -t ${HOME} -d ${HOME}/config/dotfiles git
-stow -t ${HOME} -d ${HOME}/config/dotfiles vim
+stow -t ~ -d ~/Dropbox/config/dotfiles git
+stow -t ~ -d ~/Dropbox/config/dotfiles vim
 
 # TODO: stow can't seem to force override, fix this hack
-mv ~/.bash_profile ~/.bash_profile.old
-mv ~/.bashrc ~/.bashrc.old
-stow -t ${HOME} -d ${HOME}/config/dotfiles bash
+# mv ~/.bash_profile ~/.bash_profile.old
+# mv ~/.bashrc ~/.bashrc.old
+stow -t ~ -d ~/Dropbox/config/dotfiles bash
 

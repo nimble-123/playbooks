@@ -2,4 +2,3 @@
 
 - include: dotfiles.yml
 - include: symlinks.yml
-- include: secrets.yml

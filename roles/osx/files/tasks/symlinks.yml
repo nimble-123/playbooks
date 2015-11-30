@@ -6,3 +6,6 @@
 
 - name: Create ~/.config symlink
   file: src=~/Dropbox/config dest=~/.config state=link
+
+- name: Create the ~/.ssh symlink
+  file: src=~/.secrets/common/ssh/ dest=~/.ssh state=link

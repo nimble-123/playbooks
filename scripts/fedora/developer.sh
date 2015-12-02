@@ -19,3 +19,6 @@ dnf install -yq docker docker-compose
 
 # Network
 dnf install -yq wireshark wireshark-gnome
+
+# rkt development
+dnf install -yq squashfs-tools autoconf glibc-devel glibc-static

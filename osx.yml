@@ -6,7 +6,7 @@
       repo_url: https://github.com/dghubble/dotfiles.git
       repo_path: ~/Dropbox/config/dotfiles
       packages:
-        - bash
+        - bash-osx
         - git
         - vim
   roles:

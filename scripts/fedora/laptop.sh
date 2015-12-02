@@ -6,5 +6,6 @@
 ./gui-apps.sh
 sudo -u ${USERNAME} ./secure.sh
 sudo -u ${USERNAME} ./files.sh
+sudo -u ${USERNAME} ./google-cloud.sh
 ./fonts.sh
 echo "Finished"

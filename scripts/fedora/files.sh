@@ -8,6 +8,11 @@ if [ ! -h ~/workspace ]; then
 	ln -s ~/Dropbox/workspace ~/workspace
 fi
 
+if [ ! -h ~/.kube ]; then
+	echo "Creating .kube symlink"
+	ln -s ~/Dropbox/config/kube ~/.kube
+fi
+
 # Dotfiles
 
 if [ ! -d ~/Dropbox/config/dotfiles ]; then

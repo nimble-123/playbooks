@@ -7,5 +7,9 @@
 - name: Create ~/.config symlink
   file: src=~/Dropbox/config dest=~/.config state=link
 
+- name: Create the ~/.kube symlink
+  file: src=~/Dropbox/config/kube dest=~/.kube state=link force=yes
+
 - name: Create the ~/.ssh symlink
   file: src=~/.secrets/common/ssh/ dest=~/.ssh state=link force=yes
+

@@ -25,5 +25,5 @@ stow -t ~ -d ~/Dropbox/config/dotfiles vim
 # TODO: stow can't seem to force override, fix this hack
 # mv ~/.bash_profile ~/.bash_profile.old
 # mv ~/.bashrc ~/.bashrc.old
-stow -t ~ -d ~/Dropbox/config/dotfiles bash
+stow -t ~ -d ~/Dropbox/config/dotfiles bash-linux
 

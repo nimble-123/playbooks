@@ -19,8 +19,5 @@ baseurl=http://linux.dropbox.com/fedora/22/
 gpgkey=https://linux.dropbox.com/fedora/rpm-public-key.asc
 EOF
 
-# VirtualBox
-dnf config-manager -y --add-repo http://download.virtualbox.org/virtualbox/rpm/fedora/virtualbox.repo
-
 # Update package lists
 dnf update -y

@@ -15,7 +15,7 @@ dnf install -yq libvirt
 dnf install -yq vagrant
 
 # Containers
-dnf install -yq docker docker-compose
+dnf install -yq docker
 
 # Network
 dnf install -yq wireshark wireshark-gnome
